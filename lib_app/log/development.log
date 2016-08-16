@@ -3659,3 +3659,577 @@ Processing by LibrariesController#new as HTML
   Rendered libraries/new.html.erb within layouts/application (1.0ms)
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
 Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/libraries" for ::1 at 2016-08-16 14:57:20 -0700
+Processing by LibrariesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gZpFQBPr1AoU5sV+ivCT2EygASCGClIOWr25aPmUWqoYE6dZB9Xh5h07CQRlljqbw28KvFsVaOyqAY1nDZEGAw==", "library"=>{"name"=>"San Francisco Public", "floor_count"=>"4", "floor_area"=>"25000"}, "commit"=>"Submit Library"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "libraries" ("name", "floor_count", "floor_area", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "San Francisco Public"], ["floor_count", 4], ["floor_area", 25000], ["created_at", "2016-08-16 21:57:20.695584"], ["updated_at", "2016-08-16 21:57:20.695584"]]
+  [1m[36m (659.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/libraries
+Completed 302 Found in 668ms (ActiveRecord: 660.9ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:57:21 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/libraries/1" for ::1 at 2016-08-16 14:57:28 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered libraries/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to the <%= @library.name %>!</h1>
+    2: <h3>Our floor size is <%= @library.floor_area %> with <%= @library.floor_count %> floors!</h3>
+    3: <p><small>Created on <%= @library.created_at.strftime("%b %-d, %Y %I:%M%P") %></small></p>
+  app/views/libraries/show.html.erb:1:in `_app_views_libraries_show_html_erb__114536294043606390_70315208406060'
+
+
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.1ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (104.7ms)
+
+
+Started GET "/libraries/1" for ::1 at 2016-08-16 14:58:52 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered libraries/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 33ms (Views: 24.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/libraries/2" for ::1 at 2016-08-16 14:59:18 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered libraries/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.5ms)
+  [1m[36mLibrary Load (3.0ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."name" = $1 LIMIT 1[0m  [["name", "San Francisco Public"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "libraries" SET "name" = $1, "updated_at" = $2 WHERE "libraries"."id" = $3[0m  [["name", "San Francisco Public Library"], ["updated_at", "2016-08-16 22:02:00.305650"], ["id", 2]]
+  [1m[35m (46.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+
+
+Started GET "/libraries/2" for ::1 at 2016-08-16 15:14:15 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered libraries/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 33ms (Views: 25.1ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:14:15 -0700
+
+
+Started GET "/libraries/edit" for ::1 at 2016-08-16 15:14:20 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 0]]
+  Rendered libraries/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to the <%= @library.name %>!</h1>
+    2: <h3>Our floor size is <%= @library.floor_area %> with <%= @library.floor_count %> floors!</h3>
+    3: <p><small>Created on <%= @library.created_at.strftime("%b %-d, %Y %I:%M%P") %></small></p>
+  app/views/libraries/show.html.erb:1:in `_app_views_libraries_show_html_erb__114536294043606390_70315208406060'
+
+
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.9ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (60.0ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.6ms)
+
+
+Started GET "/libraries/edit" for ::1 at 2016-08-16 15:15:52 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"edit"}
+  [1m[36mLibrary Load (0.2ms)[0m  [1mSELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1[0m  [["id", 0]]
+  Rendered libraries/show.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Welcome to the <%= @library.name %>!</h1>
+    2: <h3>Our floor size is <%= @library.floor_area %> with <%= @library.floor_count %> floors!</h3>
+    3: <p><small>Created on <%= @library.created_at.strftime("%b %-d, %Y %I:%M%P") %></small></p>
+  app/views/libraries/show.html.erb:1:in `_app_views_libraries_show_html_erb__114536294043606390_70315208406060'
+
+
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.9ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (44.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (101.8ms)
+
+
+Started GET "/libraries/1/edit" for ::1 at 2016-08-16 15:16:50 -0700
+Processing by LibrariesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered libraries/edit.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/libraries/1" for ::1 at 2016-08-16 15:17:03 -0700
+Processing by LibrariesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UlJ+wB15reBB8OV2BbpR8qtBO4PsuK10XaVV0JDaKkTL25zZCUeYDEgtKQzq3PixJI4wHzGnl5atGWHfZN927Q==", "library"=>{"name"=>"LG Public Library", "floor_count"=>"25", "floor_area"=>"2500"}, "commit"=>"Submit Library", "id"=>"1"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "libraries" SET "name" = $1, "updated_at" = $2 WHERE "libraries"."id" = $3  [["name", "LG Public Library"], ["updated_at", "2016-08-16 22:17:03.064802"], ["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/libraries/1
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/libraries/1" for ::1 at 2016-08-16 15:17:03 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered libraries/show.html.erb within layouts/application (0.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/libraries/1" for ::1 at 2016-08-16 15:21:42 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered libraries/show.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 37ms (Views: 27.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:21:43 -0700
+
+
+Started DELETE "/libraries/1" for ::1 at 2016-08-16 15:21:44 -0700
+Processing by LibrariesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Up44JPY9WuJ/jq46og0zkeLcUQUUJyjV7e24yZARxLLLF9o94gNvDnZTYkBNa5rSbRNamck4EjcdUYzGZBSYGw==", "id"=>"1"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (19.9ms)[0m  DELETE FROM "libraries" WHERE "libraries"."id" = $1  [["id", 1]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/libraries
+Completed 302 Found in 23ms (ActiveRecord: 20.7ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:21:44 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries/2" for ::1 at 2016-08-16 15:22:08 -0700
+Processing by LibrariesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered libraries/show.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 20ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/libraries/2" for ::1 at 2016-08-16 15:22:11 -0700
+Processing by LibrariesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1qCAXJ/0k6B4WrMOTrI0j8AJ8IIYOTEdh2LFuZdAVylPKWJFi8qmTHGHf3Sh1J3MT8b7HsUmC/933vG2Y0ULgA==", "id"=>"2"}
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "libraries" WHERE "libraries"."id" = $1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/libraries
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:22:11 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:23:11 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:23:11 -0700
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:23:23 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:23:23 -0700
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:23:25 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:23:58 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:23:58 -0700
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:24:10 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:24:10 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:24:10 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:24:10 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:24:11 -0700
+
+
+Started GET "/users/1" for ::1 at 2016-08-16 15:24:13 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 35ms (Views: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:24:20 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "libraries"[0m
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:25:33 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:25:34 -0700
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:25:36 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:25:58 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (2.1ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (5.1ms)
+  [1m[36mUser Load (4.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 345ms (Views: 324.4ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:26:21 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "libraries"
+  [1m[36mLibrary Load (0.2ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 22ms (Views: 20.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 15:26:21 -0700
+
+
+Started GET "/libraries/new" for ::1 at 2016-08-16 15:26:27 -0700
+Processing by LibrariesController#new as HTML
+  Rendered libraries/new.html.erb within layouts/application (7.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/libraries" for ::1 at 2016-08-16 15:26:44 -0700
+Processing by LibrariesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kd6niXZMVVMfmPJN6VaGFu16zxf4UpYTjZFOxqCyO4gIV0WQYnJgvxZFPjcGMC9VYrXEiyVNrPF9LXrJVLdnIQ==", "library"=>{"name"=>"Los Gatos Public Library", "floor_count"=>"25000", "floor_area"=>"4"}, "commit"=>"Submit Library"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "libraries" ("name", "floor_count", "floor_area", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Los Gatos Public Library"], ["floor_count", 25000], ["floor_area", 4], ["created_at", "2016-08-16 22:26:44.884848"], ["updated_at", "2016-08-16 22:26:44.884848"]]
+  [1m[35m (39.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/libraries
+Completed 302 Found in 42ms (ActiveRecord: 39.4ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 15:26:44 -0700
+Processing by LibrariesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "libraries"[0m
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.7ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+  [1m[36mLibrary Load (0.6ms)[0m  [1mSELECT "libraries".* FROM "libraries" INNER JOIN "library_users" ON "libraries"."id" = "library_users"."library_id" WHERE "library_users"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "libraries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "SFPL"], ["created_at", "2016-08-16 22:34:24.540218"], ["updated_at", "2016-08-16 22:34:24.540218"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "libraries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "LGPL"], ["created_at", "2016-08-16 22:35:52.903802"], ["updated_at", "2016-08-16 22:35:52.903802"]]
+  [1m[35m (17.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "libraries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "LGPL"], ["created_at", "2016-08-16 22:37:03.094333"], ["updated_at", "2016-08-16 22:37:03.094333"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+  [1m[35mLibrary Load (0.2ms)[0m  SELECT  "libraries".* FROM "libraries" WHERE "libraries"."name" = $1 LIMIT 1  [["name", "SFPL"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (6.5ms)[0m  INSERT INTO "library_users" ("library_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["library_id", 4], ["user_id", 1], ["created_at", "2016-08-16 22:39:19.209419"], ["updated_at", "2016-08-16 22:39:19.209419"]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "library_users" ON "users"."id" = "library_users"."user_id" WHERE "library_users"."library_id" = $1  [["library_id", 4]]
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "library_users"[0m
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries" INNER JOIN "library_users" ON "libraries"."id" = "library_users"."library_id" WHERE "library_users"."user_id" = $1  [["user_id", 1]]

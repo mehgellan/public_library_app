@@ -1,0 +1,4 @@
+<h1>Welcome to the <%= @library.name %>!</h1>
+<h3>Our floor size is <%= @library.floor_area %> with <%= @library.floor_count %> floors!</h3>
+<p><small>Created on <%= @library.created_at.strftime("%b %-d, %Y %I:%M%P") %></small></p>
+<%= button_to "Delete Library", @library, method: :delete %>
