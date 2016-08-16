@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
   post "/sessions" => "sessions#create"
 
-  get "/libraries" => "libraries#index"
+  get "/libraries" => "libraries#index", as: "libraries"
+  get "/libraries/new" => "libraries#new", as: "new_library"
+  post "/libraries" => "libraries#create"
+  get "/libraries/:id" => "libraries#show", as: "library"
+  
 end

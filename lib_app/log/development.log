@@ -3356,3 +3356,306 @@ WHERE c.contype = 'f'
 ORDER BY c.conname
 [0m
   [1m[36m (2.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2016-08-16 14:06:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (34.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 941ms (Views: 903.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 14:06:48 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 14:06:48 -0700
+
+
+Started GET "/" for ::1 at 2016-08-16 14:13:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 63ms (Views: 22.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 14:13:00 -0700
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:13:04 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (47.7ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 90ms (Views: 77.6ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:13:09 -0700
+Processing by LibrariesController#index as HTML
+  [1m[36mLibrary Load (0.5ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 22ms (Views: 18.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:15:22 -0700
+Processing by LibrariesController#index as HTML
+  [1m[36mLibrary Load (0.3ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/libraries/new" for ::1 at 2016-08-16 14:15:32 -0700
+Processing by LibrariesController#new as HTML
+  Rendered libraries/new.html.erb within layouts/application (42.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/libraries" for ::1 at 2016-08-16 14:15:50 -0700
+Processing by LibrariesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HBSVS2xCB044Q7ABnvPVWXJpiqx9GfmLimFAxebVv4aFnXdSeHwyojGefHtxlXwa/aaBMKAGw2l63XTKEtDjLw==", "library"=>{"name"=>"Los Gatos Public Library", "floor_count"=>"25", "floor_area"=>"2500"}, "commit"=>"Submit Library"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  app/controllers/libraries_controller.rb:18:in `library_params'
+  app/controllers/libraries_controller.rb:11:in `create'
+
+
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (73.7ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (188.5ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shoopainter06/.rvm/gems/ruby-2.3.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (358.1ms)
+
+
+Started GET "/libraries/new" for ::1 at 2016-08-16 14:16:20 -0700
+Processing by LibrariesController#new as HTML
+  Rendered libraries/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 29ms (Views: 21.3ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/libraries" for ::1 at 2016-08-16 14:16:34 -0700
+Processing by LibrariesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WUsA5DPCA4E6JXMX/7UXH0w29faNPpZaPMz66eJwX6rAwuL9J/w2bTP4v20Q075cw/n+alAhrLjMcM7mFnUDAw==", "library"=>{"name"=>"Los Gatos Public Library", "floor_count"=>"25", "floor_area"=>"2500"}, "commit"=>"Submit Library"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "libraries" ("name", "floor_count", "floor_area", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["name", "Los Gatos Public Library"], ["floor_count", 25], ["floor_area", 2500], ["created_at", "2016-08-16 21:16:34.251326"], ["updated_at", "2016-08-16 21:16:34.251326"]]
+  [1m[36m (13.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/libraries
+Completed 302 Found in 20ms (ActiveRecord: 14.3ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:16:34 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 20ms (Views: 18.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for ::1 at 2016-08-16 14:24:14 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 24ms (Views: 20.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:24:17 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 38ms (Views: 27.6ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/sessions" for ::1 at 2016-08-16 14:24:23 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sLRAIX55Rf1Fqdr8tFJsjA6XNCMx5wV/QkyDPYFIpJ0pPaI4akdwEUx0FoZbNMXPgVg/v+z4P52y8LcydU34NA==", "user"=>{"email"=>"jake@dog.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "jake@dog.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 36ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:24:23 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2016-08-16 14:24:32 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tPAjfklxuJ/1SB0cuk20/+Wdneq6RcBhQoZXlLko7FwtecFnXU+Nc/yV0WZVKx28alKWdmda+oOyOmObTS2w9Q==", "user"=>{"email"=>"me@g.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "me@g.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:24:32 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 24ms (Views: 23.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:27:59 -0700
+Processing by LibrariesController#index as HTML
+  [1m[36mLibrary Load (0.3ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (6.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:28:41 -0700
+Processing by LibrariesController#index as HTML
+  [1m[36mLibrary Load (0.2ms)[0m  [1mSELECT "libraries".* FROM "libraries"[0m
+  Rendered libraries/index.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/users.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/libraries.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/libraries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/turbolinks.self-c5acd7a204f5f25ce7a1d8a0e4d92e28d34c9e2df2c7371cd7af88e147e4ad82.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-08-16 14:28:41 -0700
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:29:18 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 37ms (Views: 28.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/sessions" for ::1 at 2016-08-16 14:29:26 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6yHFKgIQGrqJPnl8OBJtXiCdVVIi5iuTd/t6hWCPi4ZyqCczFi4vVoDjtQbXdMQdr1Jezv/5EXGHR06KlIrXLw==", "user"=>{"email"=>"jake@dog.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "jake@dog.com"]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:29:26 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for ::1 at 2016-08-16 14:32:34 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for ::1 at 2016-08-16 14:43:00 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8RcOI2xmCAfJ8vjrDfLnYYSXjFn3YCkd+RWNGYtXBcponuw6eFg968AvNJHilE4iC1iHxSp/E/8JqbkWf1JZYw==", "user"=>{"first_name"=>"jake", "last_name"=>"the dog", "email"=>"jake@dog.com", "password"=>"[FILTERED]"}, "commit"=>"Sign Up"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "jake"], ["last_name", "the dog"], ["email", "jake@dog.com"], ["password_digest", "$2a$10$UDoNhS/jf1oNSpH6mVzZiOeeFoG9T6gutu724k/OIEc6VYHe4fSES"], ["created_at", "2016-08-16 21:43:00.890492"], ["updated_at", "2016-08-16 21:43:00.890492"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-08-16 14:43:00 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for ::1 at 2016-08-16 14:43:43 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/sessions" for ::1 at 2016-08-16 14:43:51 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x1V6hUmHLZgDMKvJx12I1+ZjFeH7XxvxEZVjH32bBt5e3JicXbkYdArtZ7MoOyGUaawefSZAIRPhKVcQiZ5adw==", "user"=>{"email"=>"jake@dog.com", "password"=>"[FILTERED]"}, "commit"=>"Sign In"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1[0m  [["email", "jake@dog.com"]]
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 68ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/1" for ::1 at 2016-08-16 14:43:51 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 48ms (Views: 45.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/libraries" for ::1 at 2016-08-16 14:44:47 -0700
+Processing by LibrariesController#index as HTML
+  [1m[35mLibrary Load (0.3ms)[0m  SELECT "libraries".* FROM "libraries"
+  Rendered libraries/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/libraries/new" for ::1 at 2016-08-16 14:45:12 -0700
+Processing by LibrariesController#new as HTML
+  Rendered libraries/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+Completed 200 OK in 20ms (Views: 19.4ms | ActiveRecord: 0.3ms)
