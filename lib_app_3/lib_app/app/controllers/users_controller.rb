@@ -11,15 +11,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     login(@user)  # from SessionsHelper
-    redirect_to @user
+    redirect_to user_path
   end
 
   def show
     @user = User.find_by_id(params[:id])
-    def date_format
-      format = "%m/%d/%Y %H:%M"
-      date_format.strftime(format)
-    end
   end
 
   private
