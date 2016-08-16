@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete "/libraries/:id" => "libraries#destroy"
 
   get "/users/:user_id/libraries" => "library_users#index", as: "user_libraries"
+  post "/libraries/:library_id/users" => "library_users#create", as: "library_user"
 end

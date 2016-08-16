@@ -1,7 +1,10 @@
 <h4>There are <%= @libraries.size %> libraries listed.</h4>
 
-<% @libraries.each do |f| %>
+<% @libraries.each do |library| %>
   <div>
-    <h3><%= f.name %></h3>
+    <h3><%= library.name %></h3>
+    <% if current_user %>
+      <%= button_to "Join", library_user_path(library) %>
+    <% end %>
   </div>
 <% end %>
